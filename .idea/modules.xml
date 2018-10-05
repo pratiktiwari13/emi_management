@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IdeaProjects-emi_management.iml" filepath="$PROJECT_DIR$/.idea/modules/IdeaProjects-emi_management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emi_management.iml" filepath="$PROJECT_DIR$/.idea/modules/emi_management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/src/emi_management-emi_management.iml" filepath="$PROJECT_DIR$/.idea/modules/src/emi_management-emi_management.iml" group="emi_management" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/src/emi_management-emi_management_main.iml" filepath="$PROJECT_DIR$/.idea/modules/src/emi_management-emi_management_main.iml" group="emi_management" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/src/emi_management-emi_management_test.iml" filepath="$PROJECT_DIR$/.idea/modules/src/emi_management-emi_management_test.iml" group="emi_management" />
+    </modules>
+  </component>
+</project>

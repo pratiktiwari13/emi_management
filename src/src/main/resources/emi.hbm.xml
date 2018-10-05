@@ -1,0 +1,26 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "all.Emi" table = "emi">
+
+        <meta attribute = "class-description">
+            This class contains the employee detail.
+        </meta>
+
+        <id name = "id" type = "int" column = "id">
+            <generator class="native"/>
+        </id>
+
+        <property name = "emi" column = "emi" type = "int"/>
+        <property name = "startDate" column = "start_date" type = "date"/>
+        <property name = "endDate" column = "end_date" type = "date"/>
+        <property name = "period" column = "period" type = "int"/>
+        <property name = "remainder" column = "remainder" type = "int"/>
+        <property name = "total" column = "total" type = "int"/>
+        <property name = "isPaid" column = "is_paid" type = "boolean"/>
+
+    </class>
+</hibernate-mapping>
