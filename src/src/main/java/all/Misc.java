@@ -1,12 +1,18 @@
 package all;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Component;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
+@Component
 public class Misc {
+
+    private static JavaMailSender sender = new JavaMailSenderImpl();
 
     public static String encode(String id,String type,int installment){
         if(type.equals(Types.EMI_REMINDER)){
@@ -62,13 +68,16 @@ public class Misc {
         }
         return null;
     }
-    public static void mail(String email,JavaMailSender sender){
+    public static void mail(String email,String msg){
+        if(sender == null){
+            System.out.println("Yes");
+        }
         MimeMessage message = sender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message);
 
         try {
             helper.setTo(email);
-            helper.setText("Emi Due");
+            helper.setText(msg);
             helper.setSubject("Mail From Mailing API"); //later extend the feature by adding bank details i.e something like "Mail from abc bank"
         } catch (MessagingException e) {
             e.printStackTrace();

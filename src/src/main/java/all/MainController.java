@@ -63,7 +63,7 @@ public class MainController {
                 eventEndDate.setYear(startMonth>12 ? startYear++ : startYear);
 
                 String formattedDate = "'"+"2018"+"-"+eventEndDate.getMonth()+"-"+eventEndDate.getDay()+" 00:00:00.000000'";
-                String query = "CREATE EVENT emi_events ON SCHEDULE AT "+formattedDate+" DO INSERT INTO notifications VALUES('"+encodedString+"',0);";
+                String query = "CREATE EVENT emi_events ON SCHEDULE AT "+formattedDate+" DO INSERT INTO notifications VALUES('"+"Time to pay Installment Number : "+i+"',0,"+emi.getEmail()+");";
                 System.out.println(formattedDate);
                 template = currentSession.createSQLQuery(query);
 
@@ -71,7 +71,7 @@ public class MainController {
             }
             encodedString = Misc.encode(""+emi.getId(),Types.TIME_UP,0);
             String formattedDate = "'"+"2018"+"-"+endDate.getMonth()+"-"+endDate.getDay()+" 00:00:00.000000'";
-            String query = "CREATE EVENT time_up_events ON SCHEDULE AT "+formattedDate+" DO INSERT INTO notifications VALUES('"+encodedString+"',0);";
+            String query = "CREATE EVENT time_up_events ON SCHEDULE AT "+formattedDate+" DO INSERT INTO notifications VALUES('"+"Time Up Bruv"+"',0,"+emi.getEmail()+");";
             template = currentSession.createNativeQuery(query);
             template.executeUpdate();
 

@@ -16,6 +16,7 @@
 
         <property name = "msg" column = "msg" type = "string"/>
         <property name = "isProcessed" column = "is_processed" type = "boolean"/>
+        <property name = "email" column = "email" type = "string"/>
 
     </class>
 </hibernate-mapping>

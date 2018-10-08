@@ -21,6 +21,7 @@
         <property name = "remainder" column = "remainder" type = "int"/>
         <property name = "total" column = "total" type = "int"/>
         <property name = "isPaid" column = "is_paid" type = "boolean"/>
+        <property name = "email" column = "email" type = "string"/>
 
     </class>
 </hibernate-mapping>
