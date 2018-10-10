@@ -53,9 +53,8 @@ public class MainController {
 
             emiRepository.saveAndFlush(emi);
 
-            String encodedString = "";
+
             for(int i=1;i<emi.getPeriod();i++){
-                encodedString = Misc.encode(""+emi.getId(),Types.EMI_REMINDER,i);
 
                 Date eventEndDate = new Date();
                 eventEndDate.setMonth(++startMonth);
@@ -69,7 +68,6 @@ public class MainController {
 
                 template.executeUpdate();
             }
-            encodedString = Misc.encode(""+emi.getId(),Types.TIME_UP,0);
             String formattedDate = "'"+"2018"+"-"+endDate.getMonth()+"-"+endDate.getDay()+" 00:00:00.000000'";
             String query = "CREATE EVENT time_up_events ON SCHEDULE AT "+formattedDate+" DO INSERT INTO notifications VALUES('"+"Time Up Bruv"+"',0,"+emi.getEmail()+");";
             template = currentSession.createNativeQuery(query);
